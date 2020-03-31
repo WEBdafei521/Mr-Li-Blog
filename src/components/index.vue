@@ -1,8 +1,6 @@
 <template>
   <div class="main">
     <div>
-      1231
-      
     </div>
   </div>
 </template>

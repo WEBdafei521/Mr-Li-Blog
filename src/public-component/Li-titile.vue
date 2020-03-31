@@ -13,7 +13,7 @@ export default {
  created(){},
  components: {},
  computed: {},
- mounted: {},
+ mounted(){},
  methods: {}
 }
 </script>

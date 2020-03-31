@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <v-nav></v-nav>
     <vue-particles
         color="#000"
         :particleOpacity=".7"
@@ -23,9 +24,14 @@
   </div>
 </template>
 <script>
+import Left from './public-component/Li-left'
 export default {
-  name: 'App'
+  name: 'App',
+  components:{
+    'v-nav':Left
+  }
 }
+
 </script>
 
 <style>
