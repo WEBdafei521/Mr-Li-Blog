@@ -1,8 +1,8 @@
 <!--  -->
 <template>
   <div>
-    <nav class="menu-wrap">
-      <div class="menu">
+    <nav class="menu-wrap" :class="isMobile?'menu-wrap-mobile':''">
+      <div class="menu" :class="isMobile?'menu-mobile':''">
         <ul>
           <li>
             <div>
@@ -16,19 +16,7 @@
               <span class="nav-text">登录</span>
             </div>
           </li>
-          <li>
-           <div>
-              <i class="fa fa-envelope-o fa-lg"></i>
-              <span class="nav-text">联系</span>
-            </div>
-          </li>
-          <li>
-           <div>
-              <i class="fa fa-heart-o fa-lg"></i>
-              <span class="nav-text">收藏</span>
-            </div>
-          </li>
-          <li class="darkerlishadow">
+          <li class="darkerli">
            <div>
               <i class="fa fa-clock-o fa-lg"></i>
               <span class="nav-text">新闻</span>
@@ -39,18 +27,6 @@
            <div>
               <i class="fa fa-desktop fa-lg"></i>
               <span class="nav-text">技术</span>
-            </div>
-          </li>
-          <li class="darkerli">
-           <div>
-              <i class="fa fa-plane fa-lg"></i>
-              <span class="nav-text">旅行</span>
-            </div>
-          </li>
-          <li class="darkerli">
-           <div>
-              <i class="fa fa-shopping-cart"></i>
-              <span class="nav-text">购物</span>
             </div>
           </li>
           <li class="darkerli">
@@ -67,34 +43,9 @@
           </li>
           <li class="darkerli">
            <div>
-              <i class="fa fa-picture-o fa-lg"></i>
-              <span class="nav-text">设计</span>
-            </div>
-          </li>
-          <li class="darkerli">
-           <div>
               <i class="fa fa-align-left fa-lg"></i>
               <span class="nav-text">杂志
               </span>
-            </div>
-          </li>
-          <li class="darkerli">
-           <div>
-              <i class="fa fa-gamepad fa-lg"></i>
-              <span class="nav-text">游戏</span>
-            </div>
-          </li>
-          <li class="darkerli">
-           <div>
-              <i class="fa fa-glass fa-lg"></i>
-              <span class="nav-text">生活
-              </span>
-            </div>
-          </li>
-          <li class="darkerlishadowdown">
-           <div>
-              <i class="fa fa-rocket fa-lg"></i>
-              <span class="nav-text">娱乐</span>
             </div>
           </li>
           <li>
@@ -121,13 +72,25 @@ import "../assets/css/font-awesome.css";
 export default {
   data () {
     return {
+      isMobile:true
     };
   },
  created(){},
  components: {},
  computed: {},
- mounted(){},
- methods: {}
+ mounted(){
+   if (this._isMobile()) {
+     
+    } else {
+      this.isMobile=!this.isMobile
+    }
+ },
+ methods: {
+    _isMobile() {
+      let flag = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
+      return flag;
+    }
+ }
 }
 </script>
 <style scoped>

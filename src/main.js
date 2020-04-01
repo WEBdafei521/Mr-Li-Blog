@@ -4,9 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import VueParticles from 'vue-particles'  
-Vue.use(VueParticles)  
+Vue.use(VueParticles)
 Vue.config.productionTip = false
-
+import 'lib-flexible'
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

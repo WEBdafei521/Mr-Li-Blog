@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <v-nav></v-nav>
+    <l-nav></l-nav>
+    <l-header></l-header>
     <vue-particles
         color="#000"
         :particleOpacity=".7"
@@ -19,30 +20,34 @@
         clickMode="push"
         class="lizi"
       >
-      </vue-particles>
-    <router-view></router-view>
+    </vue-particles>
+    <div>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 <script>
 import Left from './public-component/Li-left'
+import Title from './public-component/Li-titile'
 export default {
   name: 'App',
   components:{
-    'v-nav':Left
+    'l-nav':Left,
+    'l-header':Title
   }
 }
 
 </script>
 
 <style>
-#app{
-}
+/* #app{
+} */
 body{
   margin: 0;
   padding:0;
 }
 .lizi{
-  position: absolute;
+  position: fixed;
   z-index: -1;
   width: 100%;
   height: 99%;
