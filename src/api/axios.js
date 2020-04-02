@@ -33,7 +33,7 @@ Axios.interceptors.request.use((config) => {
       return Promise.reject(error)
 })
 Axios.interceptors.response.use((res) =>{
-  请求响应后拦截
+  // 请求响应后拦截
   if(res.status == 200){                       // 对响应数据做些事
       //alert("提交成功")
       return Promise.resolve(res)

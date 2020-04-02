@@ -2,40 +2,40 @@
   <div class="main">
     <div>
       <!-- <div>123</div> -->
-      <div class="l-header-border"></div>
-      <l-banner></l-banner>
+      <!-- <div class="l-header-border"></div> -->
+      <!-- <l-banner></l-banner> -->
       <!-- text-tittle -->
-      <l-text-title></l-text-title>
-
+      <l-text-title  v-on:selectIndex="selectIndex" v-bind:text-title="['text1','text2','text3']"></l-text-title>
+      <l-new-list></l-new-list>
     </div>
   </div>
 </template>
 
 <script>
 import Banner from '../public-component/Li-banner'
-import Title from '../public-component/Li-title'
+import Title from '../public-component/Li-text-title'
+import newList from '../public-component/Li-new-list'
 
-import qs from 'qs' //引入 node中自带的qs模块（对application/x-www-form-urlencoded数据格式转换）
-import { getNewList } from '@/api'  // 导入 封装的请求函数
+
 export default {
   name: 'index',
   components:{
     'l-banner':Banner,
     'l-text-title':Title,
+    'l-new-list':newList,
   },
   data () {
     return {
     }
   },
   created(){
-    getNewList(`?type=shishang&key=5abe1b42340cc4ef31ff344434937c0a`).then(res=>{
-      console.log(res)
-        // get请求，url传值。用的是字符串模板传值
-        // 请求返回数据
-    }).catch(err=>{
-        // 请求失败执行
-    })
+    
   },
+  methods:{
+    selectIndex(index){
+      console.log(index)
+    }
+  }
 }
 </script>
 
