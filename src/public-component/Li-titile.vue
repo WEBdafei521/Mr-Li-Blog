@@ -37,6 +37,7 @@ export default {
   margin: 0 auto;
   text-align: right;
   background: white;
+  color: #fff;
   padding: 0 66px;
   box-sizing: border-box;
   background:rgba(247,186,85,.4);

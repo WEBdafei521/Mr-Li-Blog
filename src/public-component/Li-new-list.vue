@@ -6,13 +6,19 @@
           <div class="l-new-color">最新文章</div>
           <div>{{data}}，作者：<span class="l-new-color">李鹏</span></div>
         </div>
-        <div class="l-new-item" v-for="(item,index) of newList" :key="index">
-          <div class="l-new-item-title">Linux服务器测试性能</div>
-          <div class="l-new-content">
-              最近需要测试国外vps到国内的速度以及硬件的性能，具体可以参考这篇文章：三大免费工具助你检测VPS服务器真伪-VPS主机性能和速度测试方法
+        <div class="l-new-item" v-for="(item,index) of newList" :key="index" @click="goCheck">
+          <div class="l-new-item-title">
+            <div>{{item.category}}</div>
+            <div>{{item.date}}</div>
           </div>
-          <div class="l-new-author">--作者名</div>
-          <div class="l-new-go">阅读全文</div>
+          <div class="l-new-content">
+              {{item.title}}
+          </div>
+          <div class="l-new-img">
+            <img :src="item.thumbnail_pic_s" alt="">
+          </div>
+          <div class="l-new-author">--{{item.author_name}}</div>
+          <div class="l-new-go" :data-index="item.uniquekey" :data-url="item.url">阅读全文</div>
         </div>
     </div>
   </div>
@@ -31,7 +37,7 @@ export default {
   },
  created(){
     this.getTime()
-    getNewList(`?type=keji&key=5abe1b42340cc4ef31ff344434937c0a`).then(res=>{
+    getNewList(`?type=top&key=5abe1b42340cc4ef31ff344434937c0a`).then(res=>{
       this.newList = res.data.result.data
       console.log(res.data.result.data)
         // get请求，url传值。用的是字符串模板传值
@@ -46,6 +52,13 @@ export default {
     data.setTime(data.getTime()-24*60*60*1000);
     var date = data.getFullYear()+"年" + (data.getMonth()+1) + "月" + data.getDate()+"日";
     this.data = date
+  },
+  goCheck(e){
+    console.log(e)
+    if(e.target.dataset.index){
+      console.log(e.target.dataset.url)
+         window.location.href = e.target.dataset.url
+    }
   }
 
  },
@@ -76,15 +89,25 @@ export default {
   color:#87655B;
   font-size: 30px;
   padding-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
 }
 .l-new-content{
   line-height: 42px;
   margin-bottom:24px;
 }
+.l-new-img{
+  width: 100%;
+  margin-bottom: 16px;
+}
+.l-new-img>img{
+  width:100%;
+}
 .l-new-author{
   width: 1004;
   text-align: right;
 }
+
 .l-new-go{
   width:100px;
   height: 44px;

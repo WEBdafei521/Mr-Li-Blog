@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <!-- <l-nav></l-nav> -->
-    <!-- <l-header></l-header> -->
+    <l-nav></l-nav>
+    <l-header></l-header>
     <vue-particles
         color="#000"
         :particleOpacity=".7"

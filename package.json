@@ -12,6 +12,9 @@
   "dependencies": {
     "amfe-flexible": "^2.2.1",
     "axios": "^0.19.2",
+    "echarts": "^4.7.0",
+    "echarts-liquidfill": "^2.0.5",
+    "echarts-wordcloud": "^1.1.3",
     "lib-flexible": "^0.3.2",
     "px2rem-loader": "^0.1.9",
     "velocity-animate": "^1.5.2",

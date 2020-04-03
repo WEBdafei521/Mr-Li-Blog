@@ -58,7 +58,7 @@ export default {
 .l-text-ui>li{
   width: 166px;
   text-align: center;
-  font-size: 32px;
+  font-size: 28px;
   list-style:none;
   height:88px;
   line-height: 88px;
