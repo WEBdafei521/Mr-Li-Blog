@@ -9,6 +9,11 @@ export default new Router({
       path: '/',
       name: 'index',
       component: resolve=>(require(["@/components/index"],resolve))
+    },
+    {
+      path: '/weather',
+      name: 'weather',
+      component: resolve=>(require(["../public-component/Li-weather"],resolve))
     }
   ]
 })

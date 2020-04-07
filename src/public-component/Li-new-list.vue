@@ -39,7 +39,7 @@ export default {
     this.getTime()
     getNewList(`?type=top&key=5abe1b42340cc4ef31ff344434937c0a`).then(res=>{
       this.newList = res.data.result.data
-      console.log(res.data.result.data)
+      // console.log(res.data.result.data)
         // get请求，url传值。用的是字符串模板传值
         // 请求返回数据
     }).catch(err=>{
@@ -54,9 +54,9 @@ export default {
     this.data = date
   },
   goCheck(e){
-    console.log(e)
+    // console.log(e)
     if(e.target.dataset.index){
-      console.log(e.target.dataset.url)
+      // console.log(e.target.dataset.url)
          window.location.href = e.target.dataset.url
     }
   }
