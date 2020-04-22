@@ -29,6 +29,10 @@
       <h3>漏斗图</h3>
       <div id="echarts6" style="width:96vw; height:300px;"></div>
     </div>
+    <div class="l-canvas-circle">
+      <h3>漏斗图</h3>
+      <div id="baidu" style="width:96vw; height:300px;"></div>
+    </div>
   </div>
 </template>
 
@@ -41,8 +45,18 @@ export default {
   },
  created(){},
  methods:{
+  //百度地图
+  getMap(){
+            
+    // GL版命名空间为BMapGL
+	var map = new BMapGL.Map("baidu");    // 创建Map实例
+	map.centerAndZoom(new BMapGL.Point(118.5, 27.5), 5);  // 初始化地图,设置中心点坐标和地图级别
+	map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+	map.setMapType(BMAP_EARTH_MAP);      // 设置地图类型为地球模式
+        }
  },
  mounted(){
+   this.getMap()
   //  饼状图
       var dom1 = document.getElementById('echarts1')
       var myChart1 = this.echarts.init(dom1)
@@ -621,6 +635,9 @@ export default {
             }
         ]
       })
+
+  
+
  },
  computed:{},
 }
