@@ -3,10 +3,10 @@
 import axios from 'axios'        //引入 axios库
 import qs from 'qs'              //引入 node中自带的qs模块（数据格式转换）
 
-// let baseURL = 'http://v.juhe.cn/'
+let baseURL = 'http://v.juhe.cn/'
 
 // 配置axios的属性
-let baseURL = '/api'
+// let baseURL = '/api'
 const Axios = axios.create({
 	baseURL:baseURL, 		      // 后台服务地址
 	timeout: 60000, 		      // 请求超时时间1分钟

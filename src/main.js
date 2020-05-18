@@ -7,6 +7,16 @@ import router from './router'
 import VueParticles from 'vue-particles'  
 Vue.use(VueParticles)
 
+// 图片懒加载
+import VueLazyLoad from 'vue-lazyload'
+Vue.use(VueLazyLoad,{
+    preLoad:0.2,
+    error:'./assets/img/error.png',
+    loading:'./assets/img/loading.png',
+    attempt: 1
+})
+
+
 // 技术专区 echarts引入
 import Echarts from 'echarts'
 import 'echarts-liquidfill'
